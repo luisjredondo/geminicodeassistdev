@@ -34,7 +34,6 @@ steps:
           cloudbuild.googleapis.com \
           sqladmin.googleapis.com \
           workstations.googleapis.com \
-          sourcerepo.googleapis.com \
           storage.googleapis.com \
           --project ${_PROJECT_ID}
   # Create GCS bucket for Terraform state
@@ -59,6 +58,6 @@ steps:
       sed -i "s/YOUR_PROJECT_ID/${_PROJECT_ID}/g" terraform.tfvars
       sed -i "s/YOUR_PROJECT_ID/${_PROJECT_ID}/g" backend.tf
 
-      terraform init
+      terraform init 
       terraform plan -out=terraform.tfplan
       terraform apply -auto-approve terraform.tfplan

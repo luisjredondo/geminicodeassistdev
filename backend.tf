@@ -1,6 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket = "YOUR_PROJECT_ID"
+    bucket = "myprojectgcalr"
     prefix = "tfstate"
   }
 }
